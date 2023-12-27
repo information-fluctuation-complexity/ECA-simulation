@@ -8,7 +8,7 @@ The eca_lib.py library contains the following functions:
 * `create_matrix(rule_number, length)`: returns a matrix of possible transitions between the 2<sup>*length*</sup> ECA states, each state being identified by the integer equivalent of the string of bits contained in the automaton cells, given the ECA *rule_number* and *length*
 * `find_attractors(matrix)`: given a transition *matrix*, returns a list of attractors (each of which is a list of states identified by integers) by finding isolated subsets of the states that are interconnected only among themselves, in the steady-state, after eliminating transient states
 * `estimate_probabilities(matrix, attractor, iterations)`: returns a list of estimated state probabilities synchronized with *attractor* after running a simulation with random stimulation, given an ECA transition *matrix*, an *attractor* list and the number of *iterations*
-* `compute_probabilities(matrix, attractor, ratios = False)`: returns a list of state probabilities synchronized with *attractor* given an ECA transition *matrix* and an *attractor* list, as computed exactly using `sympy.linsolve()`; returned probabilities are floats unless the optional argument *ratios* is *False*, in which case they are fractions as strings (for display)
+* `compute_probabilities(matrix, attractor, ratios = False)`: returns a list of state probabilities synchronized with *attractor* given an ECA transition *matrix* and an *attractor* list, as computed exactly using `sympy.linsolve()`; returned probabilities are floats unless the optional argument *ratios* is *True*, in which case they are fractions as strings (for display)
 * `compute_complexity(probabilities)`: returns (entropy, complexity) tuple given state *probabilities* list, where *complexity* is the primary complexity measure: *state information fluctuation complexity*
 * `compute_gamma_complexity(matrix, attractor, probabilities)`: returns (entropy, gammaComplexity) tuple given *matrix, attractor, probabilities* lists, the latter two lists being synchronized, where *gammaComplexity* is the secondary complexity measure: *net-information-gain fluctuation complexity*
 
@@ -44,7 +44,7 @@ Given a transition matrix and a list of attractors, determine the state probabil
 
 #### 3.2. Solve for state probabilites exactly using `sympy.linsolve()`
 
-`compute_probabilities(matrix, attractor, ratios = False)`: returns a list of state probabilities synchronized with *attractor* given an ECA transition *matrix* and an *attractor* list, as computed exactly using `sympy.linsolve()`; returned probabilities are floats unless the optional argument *ratios* is *False*, in which case they are fractions as strings (for display)
+`compute_probabilities(matrix, attractor, ratios = False)`: returns a list of state probabilities synchronized with *attractor* given an ECA transition *matrix* and an *attractor* list, as computed exactly using `sympy.linsolve()`; returned probabilities are floats unless the optional argument *ratios* is *True*, in which case they are fractions as strings (for display)
 
 ### 4. Compute entropy and complexity
 
