@@ -4,7 +4,7 @@ import sys, getopt, eca_lib as eca
 
 RULE_NUMBER = 110 # possible values: 0 to 255
 LENGTH = 3 # number of cells in the automaton, > 0
-ITERATION_POWER = 7 # number of simulation iterations (power of 10; 7 -> 10**7)
+ITERATION_POWER = 6 # number of simulation iterations (power of 10; 6 -> 10**6)
                     # if 0, do exact computation instead of simulation
 SKIP_SEARCH = False # if True, skip attractor search; only one attractor exists
 NET_INFORMATION_GAIN = False # if True, use the secondary complexity measure

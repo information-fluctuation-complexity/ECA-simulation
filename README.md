@@ -66,7 +66,7 @@ Near the beginning of eca_complexity.py are five constants set to their default 
 ```python
 RULE_NUMBER = 110 # possible values: 0 to 255
 LENGTH = 3 # number of cells in the automaton, > 0
-ITERATION_POWER = 7 # number of simulation iterations (power of 10; 7 -> 10**7)
+ITERATION_POWER = 6 # number of simulation iterations (power of 10; 6 -> 10**6)
                     # if 0, do exact computation instead of simulation
 SKIP_SEARCH = False # if True, skip attractor search; only one attractor exists
 NET_INFORMATION_GAIN = False # if True, use the secondary complexity measure
@@ -74,7 +74,7 @@ NET_INFORMATION_GAIN = False # if True, use the secondary complexity measure
 ```
 These values can be modified manually or the program can be invoked from a shell using the following syntax:
 
-`python eca_complexity.py -r 110 -l 3 -i 7 -s -n`
+`python eca_complexity.py -r 110 -l 3 -i 6 -s -n`
 
 The options `-r, -l, -i, -s, -n` can override the default values of `RULE_NUMBER, LENGTH, ITERATION_POWER, SKIP_SEARCH, NET_INFORMATION_GAIN` respectively; the first three must each be followed by an integer.
 
